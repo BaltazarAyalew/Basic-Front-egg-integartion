@@ -5,6 +5,7 @@ import "./counter";
 
 import { ContextHolder } from '@frontegg/rest-api';
 import { AdminPortal, useAuth, useLoginWithRedirect } from "@frontegg/react";
+import UserCard from './components/userCard';
 
 function App() {
 
@@ -29,33 +30,24 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div >
       {isAuthenticated ? (
-        <div className='card'>
-          <div>
-            <img src={user?.profilePictureUrl} alt={user?.name} />
-          </div>
-          <div className="detail">
-            <span className="heading">Name: {user?.name}</span>
-            <span className="heading">Name: {user?.email}</span>
-          </div>
-          <div>
-            <button
-            onClick={() => logout()}
-            className="button">Click to logout</button>
-            <button
-            onClick={() => handleClick()}
-            className="button">View full Profile</button>
-          </div>
-        </div>
+       <div>
+        <div className="App">
+         <UserCard
+          user={user}
+          logout={logout}
+          handleClick={handleClick}
+        />
+       </div>
+       <div className='wrapper'>
+          Home
+       </div>
+       </div>
       ): 
       (
         <div>
-        <button 
-        onClick={() => loginWithRedirect()}
-        className="button">
-        Click me to login
-        </button>
+          <h1>Need to login</h1>
         </div>
       ) }
     </div>
