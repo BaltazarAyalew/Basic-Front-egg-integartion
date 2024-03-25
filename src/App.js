@@ -1,8 +1,6 @@
 
 import './App.css';
 import {useEffect} from 'react'
-import "./counter";
-
 import { ContextHolder } from '@frontegg/rest-api';
 import { AdminPortal, useAuth, useLoginWithRedirect } from "@frontegg/react";
 import UserCard from './components/userCard';
@@ -33,7 +31,7 @@ function App() {
     <div >
       {isAuthenticated ? (
        <div>
-        <div className="App">
+        <div className="App">     
          <UserCard
           user={user}
           logout={logout}

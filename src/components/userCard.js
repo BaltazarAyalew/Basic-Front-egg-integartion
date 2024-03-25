@@ -8,7 +8,7 @@
         </div>
         <div className="detail">
           <span className="heading">Name: {user?.name}</span>
-          <span className="heading">Name: {user?.email}</span>
+          <span className="heading">Email: {user?.email}</span>
         </div>
         <div>
           <button
